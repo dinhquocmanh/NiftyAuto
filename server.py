@@ -47,7 +47,7 @@ def server_menu():
         print("3. Send command to ALL clients")
         print("4. Exit")
         print("5. Start auto farm bloom.")
-        
+
         choice = input("Enter your choice: ")
         if choice == '1':
             for id in clients:
@@ -77,15 +77,15 @@ def server_menu():
             # start game
             commands = [
                 f"autofarm {ISLANDS[0]} autohost",
-                f"autofarm {ISLANDS[1]} autojoin",
+                f"autofarm {ISLANDS[0]} autojoin",
                 f"autofarm {ISLANDS[2]} autohost",
-                f"autofarm {ISLANDS[3]} autojoin",
+                f"autofarm {ISLANDS[2]} autojoin",
                 f"autofarm {ISLANDS[4]} autohost",
-                f"autofarm {ISLANDS[5]} autojoin",
+                f"autofarm {ISLANDS[4]} autojoin",
                 f"autofarm {ISLANDS[6]} autohost",
-                f"autofarm {ISLANDS[7]} autojoin",
+                f"autofarm {ISLANDS[6]} autojoin",
                 f"autofarm {ISLANDS[8]} autohost",
-                f"autofarm {ISLANDS[9]} autojoin",
+                f"autofarm {ISLANDS[8]} autojoin",
             ]
             index = 0
             for id in clients:  
