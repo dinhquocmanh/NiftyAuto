@@ -12,4 +12,5 @@ if __name__ == "__main__":
     # auto_move("w")
     # auto_move("space")
     #create_match()
-    go_to_island("https://niftyis.land/krul/0") 
+    #go_to_island("https://niftyis.land/krul/0") 
+    open_game()
