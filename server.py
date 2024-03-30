@@ -12,10 +12,11 @@ class ClientHandler:
         self.name = self.regconize(addr)
 
     def regconize(self, addr):
-        for k, v in VPS:
-            if v == addr.ip: 
-                self.name = k
-
+        for k, v in VPS.items():
+            if v == addr[0]: 
+                return k
+        return "unknown"
+        
     def listen_for_commands(self):
         while True:
             try:
@@ -47,7 +48,7 @@ def server_menu():
         choice = input("Enter your choice: ")
         if choice == '1':
             for id in clients:
-                print(f"Client ID: {id}, Address: {clients[id].addr}")
+                print(f"Client ID: {id}, Name: {clients[id].name} Address: {clients[id].addr}")
         elif choice == '2':
             client_id = int(input("Enter client ID: "))
             if client_id in clients:
