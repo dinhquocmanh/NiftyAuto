@@ -77,7 +77,7 @@ def create_match():
     # 894, 376
     time.sleep(1)
     x,y = get_window_position(name_client)
-    pyautogui.click(x+894, y+376)
+    pyautogui.click(x+862, y+334)
     console.log("Create match success. Waiting other player join")
 
     time.sleep(30)
