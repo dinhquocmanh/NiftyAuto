@@ -37,6 +37,7 @@ def execute_command(command):
             while True:
                 create_match()
                 time.sleep(random.randint(600,650))
+                close_match()
 
         if cmd == "autojoin":
             console.log("Start auto accept game mode.")

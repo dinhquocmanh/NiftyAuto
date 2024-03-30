@@ -78,14 +78,22 @@ def create_match():
     time.sleep(3)
     x,y = get_window_position(name_client)
     pyautogui.click(x+865, y+335)
-    pyautogui.click(x+855, y+325)
-    pyautogui.click(x+865, y+300)
+
     console.log("Create match success. Waiting other player join")
 
     time.sleep(30)
     focus_game()
     pyautogui.press("y")
     console.log("Start match success")
+
+
+def close_match():
+    """Close match after ending"""
+    time.sleep(3)
+    x,y = get_window_position(name_client)
+    pyautogui.click(x+622, y+633) # Exit button
+    pyautogui.click(x+133, y+638) # Rematch button
+    console.log("Close match success")
 
 
 def accept_match():

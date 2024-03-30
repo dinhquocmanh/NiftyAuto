@@ -1,3 +1,4 @@
 git pull
-.\venv\Scripts\activate
+CALL venv\Scripts\activate
 python client.py
+pause

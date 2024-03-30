@@ -4,6 +4,9 @@ Auto:
 
 
 # Install 
+    Visual Studio code
+    https://code.visualstudio.com/download#
+    
     Git for Windows x64
     https://github.com/git-for-windows/git/releases/download/v2.44.0.windows.1/Git-2.44.0-64-bit.exe
 
