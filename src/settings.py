@@ -46,3 +46,16 @@ VPS = {
 
 HOST_IP = "103.82.27.237"
 HOST_PORT = 11705
+
+ISLANDS = [
+    "https://niftyis.land/coffeet01/0",
+    "https://niftyis.land/starrynight02/0",
+    "https://niftyis.land/wanderlust03/0",
+    "https://niftyis.land/advent04/0",
+    "https://niftyis.land/techgeek05/0",
+    "https://niftyis.land/dreamer06/0",
+    "https://niftyis.land/musiclover07/0",
+    "https://niftyis.land/natureexplorer08/0",
+    "https://niftyis.land/bookworm09/0",
+    "https://niftyis.land/sunshi10/0",
+]

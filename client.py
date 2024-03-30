@@ -16,8 +16,6 @@ def execute_command(command):
             console.log("Closing game..")
             close_game()
 
-        
-
         if cmd == "automove":
             console.log("Start auto move thread..")
             directions = ["w","a","s","d","space"]
@@ -45,9 +43,22 @@ def execute_command(command):
             while True:
                 accept_match()
                 time.sleep(random.randint(10,15))
-    
+
     except Exception as e:
         console.log(e)
+
+def autofarm(island_url, farm_mode):
+    """
+    Start auto farm bloom
+    Go to island
+    Start auto autohost/autojoin
+    Start auto move
+    """
+    threading.Thread(target=execute_command, args=(f"goisland {island_url}",)).start()
+    time.sleep(120)
+    threading.Thread(target=execute_command, args=(farm_mode,)).start()
+    time.sleep(60)
+    threading.Thread(target=execute_command, args=("automove",)).start()
 
 
 def listen_for_commands(host=HOST_IP, port=HOST_PORT):
@@ -63,6 +74,11 @@ def listen_for_commands(host=HOST_IP, port=HOST_PORT):
             if command == "exit":
                 console.log("Exitting client..")
                 sys.exit()
+
+            if command.split()[0]  == "autofarm":
+                island_url = command.split()[1] 
+                farm_mode = command.split()[2] # Farm mode: host/join
+                threading.Thread(target=autofarm, args=(island_url,farm_mode)).start()
 
             threading.Thread(target=execute_command, args=(command,)).start()
 
