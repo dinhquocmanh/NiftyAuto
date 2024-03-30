@@ -49,7 +49,7 @@ def execute_command(command):
         console.log(e)
 
 
-def listen_for_commands(host='localhost', port=65432):
+def listen_for_commands(host=HOST_IP, port=HOST_PORT):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.connect((host, port))
         while True:
@@ -61,7 +61,7 @@ def listen_for_commands(host='localhost', port=65432):
             if command == "exit":
                 console.log("Exitting client..")
                 sys.exit()
-                
+
             threading.Thread(target=execute_command, args=(command,)).start()
 
 

@@ -9,7 +9,6 @@ game_client = "NiftyIslandClient.exe"
 name_client = "NiftyIsland"
 name_launcher = "Nifty Island Launcher"
 
-
 window_w = 1152
 window_h = 648
 
@@ -44,3 +43,6 @@ VPS = {
     "vpsgpu09":	"103.90.227.188",
     "vpsgpu10":	"103.90.227.183",
 }
+
+HOST_IP = "103.82.27.237"
+HOST_PORT = 11705

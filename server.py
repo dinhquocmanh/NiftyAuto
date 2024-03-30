@@ -1,12 +1,20 @@
 import socket
 import threading
 import sys
+from src.settings import *
+
 
 class ClientHandler:
     def __init__(self, conn, addr, id):
         self.conn = conn
         self.addr = addr
         self.id = id
+        self.name = self.regconize(addr)
+
+    def regconize(self, addr):
+        for k, v in VPS:
+            if v == addr.ip: 
+                self.name = k
 
     def listen_for_commands(self):
         while True:
@@ -54,7 +62,7 @@ def server_menu():
         else:
             print("Invalid choice.")
 
-def start_server(host='localhost', port=65432):
+def start_server(host='0.0.0.0', port=HOST_PORT):
     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         s.bind((host, port))
         s.listen()
