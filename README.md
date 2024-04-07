@@ -49,3 +49,8 @@ Auto:
     goisland [url]
     autohost
     autojoin
+
+# To do     
+Stop auto when client closed
+Auto reopen
+Server handle errors, client disconnected

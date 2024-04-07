@@ -98,6 +98,7 @@ def close_match():
 
 def accept_match():
     """Auto accept new match"""
+    if not is_game_running(): return
     focus_game()
     pyautogui.press("y")
 
@@ -105,6 +106,7 @@ def accept_match():
 
 def auto_move(direction="w"):
     """Random move to prevent disconnect game wasd"""
+    if not is_game_running(): return
     console.log("Move ", direction)
     focus_game()
     with pyautogui.hold(direction):
@@ -114,5 +116,27 @@ def auto_move(direction="w"):
 def go_to_island(island_url):
     command  = "start msedge {}".format(island_url) 
     os.system(command)
-    
 
+
+def mouse_click(x, y):
+    if not is_game_running(): return
+    console.log("Click ", x, y)
+    focus_game()
+    pyautogui.click(x,y)
+
+
+def chat():
+    pass 
+
+
+def random_click():
+    pass 
+
+
+def auto_chat():
+    pass 
+
+
+def send_notif():
+    """Send notification to telegram app"""
+    pass 

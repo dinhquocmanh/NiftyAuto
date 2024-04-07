@@ -42,7 +42,7 @@ def execute_command(command):
             time.sleep(30)
             while True:
                 accept_match()
-                time.sleep(random.randint(10,15))
+                time.sleep(random.randint(15,30))
 
     except Exception as e:
         console.log(e)
