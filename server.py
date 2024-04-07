@@ -53,16 +53,18 @@ def server_menu():
             for id in clients:
                 print(f"Client ID: {id}, Name: {clients[id].name} Address: {clients[id].addr}")
         elif choice == '2':
-            client_id = int(input("Enter client ID: "))
-            if client_id in clients:
-                command = input("Enter command to send: ")
-                try:
-                    clients[client_id].conn.sendall(command.encode())
-                except Exception as e:
-                    print(e)
-                    print("Client disconnected")
-            else:
-                print("Client not found.")
+            client_ids = int(input("Enter client ID (1 2 3): "))
+            command = input("Enter command to send: ")
+            for client_id in client_ids.split(): 
+                if client_id in clients: 
+                    try:
+                        print(f"Send command {command} to client {client_id}")
+                        clients[client_id].conn.sendall(command.encode())
+                    except Exception as e:
+                        print(e)
+                        print("Client disconnected")
+                else:
+                    print("Client not found.")
 
         elif choice == '3':
             command = input("Enter command to send: ")

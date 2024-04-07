@@ -116,7 +116,8 @@ def auto_move(direction="w"):
 def go_to_island(island_url):
     command  = "start msedge {}".format(island_url) 
     os.system(command)
-
+    time.sleep(3)
+    
 
 def mouse_click(x, y):
     if not is_game_running(): return
